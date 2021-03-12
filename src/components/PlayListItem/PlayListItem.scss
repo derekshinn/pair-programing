@@ -1,0 +1,23 @@
+.list-item {
+    display: flex;
+    height: 10rem;
+    align-items: center;
+    border-top: 1px solid #E1E1E1;
+    background-color: #fff;
+
+    &__image {
+        border-radius: 1rem;
+        height: 8rem;
+    }
+
+    &__content {
+        margin-left: 1rem;
+    }
+
+    &__button {
+        display: flex;
+        border: none;
+        padding: 0.25rem .5rem;
+        border-radius: .4rem;
+    }
+}

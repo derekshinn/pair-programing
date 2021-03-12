@@ -3,6 +3,8 @@ import { Component } from 'react'
 import MusicPlayer from './components/MusicPlayer/MusicPlayer';
 import Login from './components/Login/Login';
 import SpotifyWebApi from 'spotify-web-api-js'
+import PlayList from './components/PlayList/PlayList';
+
 
 const spotifyAPI = new SpotifyWebApi();
 
@@ -50,7 +52,6 @@ class App extends Component {
 
 
   handlePlay =  (id) => {
-    let token = (this.state.token)
     
       spotifyAPI.play([{
         "context_uri": `spotify:playlist:${id}`,
@@ -70,18 +71,44 @@ class App extends Component {
           albums: response.albums.items,
           artists: response.artists.items,
           playlists: response.playlists.items
-        }, () => {
-          console.log(this.state.artists)
+        },() =>{
           console.log(this.state.albums)
-          console.log(this.state.playlists)
         })
       })
+  }
+
+  handleLikes = (id) =>{
+    console.log(id)
+    this.setToken()
+    spotifyAPI.followPlaylist(id)
+  }
+
+  handleClick = (e) =>{
+    console.log(e.target.alt)
+    this.setToken()
+      spotifyAPI.search(e.target.alt,["album","artist","playlist"])
+      .then(response =>{
+        this.setState({
+          albums: response.albums.items,
+          artists: response.artists.items,
+          playlists: response.playlists.items
+        },() =>{
+          console.log(this.state.albums)
+        })
+      })
+    
   }
 
   render(){
     return (
       <div className="App">
-        { this.state.token ? (<MusicPlayer listPlayer={this.state.listSpotify} handlePlay= {this.handlePlay} handleSubmit={this.handleSubmit}/>) :(<Login />)}
+        { this.state.token ? (
+                <div>
+                <MusicPlayer listPlayer={this.state.listSpotify} handleClick={this.handleClick} handleSubmit={this.handleSubmit}/>
+                <PlayList playLists={this.state.playlists}  handleClick={this.handleLikes} />
+                </div>
+              ) :
+              (<Login />)}
       </div>
     );
   }
