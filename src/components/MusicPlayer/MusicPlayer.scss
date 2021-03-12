@@ -24,16 +24,13 @@
                 align-items: center;
                 max-width: 6.5rem;
                 background-color: #282C34;
-                box-shadow: 0px transparent;
-                border: none;
+                box-shadow: 0px  #282C34 transparent;
+                border: none ;
                 text-shadow: 0px transparent;
-
-                ::active {
-                    color: red;
                 }
         }
     }
-    }
+    
 
 h2 {
     padding-top: 5rem;
