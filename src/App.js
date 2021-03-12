@@ -24,7 +24,7 @@ class App extends Component {
 
   componentDidMount() {
     let token = window.location.hash
-                          .substr(1)v
+                          .substr(1)
                           .split("&")
                           .reduce((initial, item) => {
                             let parts = item.split("=")

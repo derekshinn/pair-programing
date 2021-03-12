@@ -1,8 +1,44 @@
 .music-player {
-    width: 55%;
-    min-height: 60vh;
-    background-color: #ffffff;
+    // width: 55%;
+    min-height: 100%;
     opacity: 0.8;
     border-radius: 1rem;
-    padding: 1.5rem 1.5rem;
+}
+
+.emotion {
+    
+        &__logo {
+        width: 100%;
+        pointer-events: none;
+        padding-top: 2rem;
+        }
+
+        &__wrapper {
+            width: 375px;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap; 
+            padding-left: 0.5rem;
+
+            &--face {
+                align-items: center;
+                max-width: 6.5rem;
+                background-color: #282C34;
+                box-shadow: 0px transparent;
+                border: none;
+                text-shadow: 0px transparent;
+
+                ::active {
+                    color: red;
+                }
+        }
+    }
+    }
+
+h2 {
+    padding-top: 5rem;
+    color: #f08080;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 1.65rem;
+    text-align: center;
 }
