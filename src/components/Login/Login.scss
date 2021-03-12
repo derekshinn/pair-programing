@@ -1,0 +1,22 @@
+.login {
+    width: 25%;
+    min-height: 25vh;
+    background-color: #FFFFFF;
+    opacity: 0.8;
+    border-radius: 1rem;
+    padding: 5rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    &__button {
+        margin-top: 2rem;
+        background-color: #40D6EF;
+        box-shadow:  6px 7px 16px 1px rgb(0 0 0 / 20%);
+        padding: 1rem 1.5rem;
+        font-family: inherit;
+        border-radius: 3.125rem;
+        border: none;
+    }
+
+}
